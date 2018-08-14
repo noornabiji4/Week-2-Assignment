@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Qhuestion</title>
+</head>
+<body>
+	<h3>1) What is closure ? How it is created?</h3>
+	<p> Closure is remember the function value. To define the lexical scope of a function to bottom to top</p>
+	     <h4>Example</h4>
+	     <script type="text/javascript">
+	     	/*function foo(){
+	     		var a=2;
+	     		function bar(){
+	     			console.log(a);
+
+	     		}
+
+	     	bar();
+	     }
+	     foo();*/
+
+	     </script>
+	     <h3>2) How do you use closure to create an encapsulated module? What’s benefits of that approach?</h3>
+	     <h4></h4>
+	     <script type="text/javascript">
+	     	/*function foo(){
+	     		return[3,4,5]
+	     	}
+	     	var [a,b,c]=foo();
+	     	console.log(a,b,c);*/
+	     </script>
+	     <h3>3) How do you “borrow “ a function and implicitly set this ?</h3>
+	     <h4>implicitly assiging the contaext as an object to a function.creating a function to global context </h4>
+	     <script type="text/javascript">
+	     	function foo(){
+ 			 console.log(this.a);
+			}
+
+				var a = 5;
+
+				var obj = {
+  						a: 10,
+			  foo : foo
+			}
+
+			obj.foo()
+	     </script>
+
+	     <h3>4) How do you explicity set this for a function call</h3>
+	     <h4>Explicity function get a particular context of an object. Using a call function to exicute a value of the function.</h4>
+	 <h5>For Example of Explicity function call</h5>
+	 <script type="text/javascript">
+	 	function foo(){
+		  console.log(this.a);
+			}
+
+			var obj = {
+			  a: 10,
+				}
+
+			var a = 'Five';
+
+		foo.call(obj);
+	 </script>
+
+	     <h3>5) How can you lock a specific this to function ? why do that ? why not ?</h3>
+	     <h4>A function that call internally and manually define the same function.</h4>
+	     <h5>See the Example</h5>
+	     <script type="text/javascript">
+	     	/*function foo(){
+	     		console.log(this.bar);
+	     	}
+	     	var obj ={bar : "bar"};
+	     	var obj2 ={bar : "bar2"}
+	     	var orig=foo;
+	     	var foo = function(){
+	     		orig.call(obj);
+	     	};
+	     	foo();
+	     	foo.call(obj2);*/
+	     </script>
+
+
+	     <h3>6) How do you create a  new this for the function call ?</h3>
+	     <h4>The new keyword creating a new object for a function. 
+	      That have a four method can exicute.
+	     1) creat a rand new object.
+	     2)Newly created object get link to another object. 
+	     3) it will pass this contest to the function call. 
+	     4) Function dont have a return it will return this.</h4>
+	     <h5>For Example</h5>
+	     <script type="text/javascript">
+	     	/*function foo(a){
+	     		console.log(this);
+	     		this.a=a;
+	     		}
+	     		var bar = new foo(2);
+	     		console.log(bar);
+	     		console.log(bar.a); */
+	     	     </script>
+
+	     prototype:
+	     <h1>1) what is constructor caa?</h1>
+	     <p>Object instance are created with constructor which are basically special function that prepare new instance of an objectfor use</p> 
+	       this object poitns to new creating object
+  <script type="text/javascript">
+	       	/*function Mobile(model_no){
+	       	this.model=model_no;
+	       	this.price=function(){
+	       		console.log(this.model+" Price Rs.3000");
+	       	} 
+	       	}
+	       	var samsung = new Mobile('Galaxy');
+	       	var nokia = new Mobile ('3310');
+	       	samsung.price();
+	       	nokia.price();*/
+	       </script>
+
+
+	       <h4>2) What is a prototype and where does it come from ?</h4>
+	       <h5>protototype is property of a function object. Prototype is creat a function of a declare.
+	       object creating a construtor function using construtor method</h5>
+	       
+
+
+
+
+   
+</body>
+</html>
